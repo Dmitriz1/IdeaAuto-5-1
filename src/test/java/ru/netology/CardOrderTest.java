@@ -42,7 +42,7 @@ public class CardOrderTest {
         $(By.cssSelector("[data-test-id='date'] input")).setValue(formData.getNewDate());
         $(By.className("button")).click();
         $(By.className("button_view_extra")).click();
-        System.setProperty("selenide.timeout", "5000");
+        System.setProperty("selenide.timeout", "1000");
         $(By.className("notification__content"))
                 .shouldHave(text("Встреча успешно запланирована на " + formData.getDate()), Duration.ofSeconds(15))
                 .shouldBe(visible);

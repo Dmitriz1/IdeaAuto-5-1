@@ -21,7 +21,7 @@ public class CardOrderTest {
         $(By.cssSelector("[data-test-id='phone'] input")).setValue(formData.getPhone());
         $(By.cssSelector("[data-test-id='agreement']")).click();
         $(By.className("button")).click();
-
+        System.setProperty("selenide.timeout", "1000");
         $(By.className("notification__content"))
                 .shouldHave(text("Встреча успешно запланирована на " + formData.getDate()), Duration.ofSeconds(15))
                 .shouldBe(visible);
@@ -42,6 +42,7 @@ public class CardOrderTest {
         $(By.cssSelector("[data-test-id='date'] input")).setValue(formData.getNewDate());
         $(By.className("button")).click();
         $(By.className("button_view_extra")).click();
+        System.setProperty("selenide.timeout", "5000");
         $(By.className("notification__content"))
                 .shouldHave(text("Встреча успешно запланирована на " + formData.getDate()), Duration.ofSeconds(15))
                 .shouldBe(visible);

@@ -29,7 +29,7 @@ public class CardOrderTest {
         $(By.className("button")).click();
         $(By.className("button_view_extra")).click();
         $(By.className("notification__content"))
-                .shouldHave(text("Встреча успешно запланирована на " + formData.getDate()), Duration.ofSeconds(15))
+                .shouldHave(text("Встреча успешно запланирована на " + formData.getNewDate()), Duration.ofSeconds(15))
                 .shouldBe(visible);
     }
 }

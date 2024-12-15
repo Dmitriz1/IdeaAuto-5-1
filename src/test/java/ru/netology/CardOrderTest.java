@@ -16,6 +16,7 @@ public class CardOrderTest {
         open("http://localhost:9999");
 
         $(By.cssSelector("[data-test-id='city'] input")).setValue(formData.getCity());
+        $(By.cssSelector("[data-test-id='date'] input")).sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE);
         $(By.cssSelector("[data-test-id='date'] input")).setValue(formData.getDate());
         $(By.cssSelector("[data-test-id='name'] input")).setValue(formData.getName());
         $(By.cssSelector("[data-test-id='phone'] input")).setValue(formData.getPhone());

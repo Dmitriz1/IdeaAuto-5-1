@@ -25,6 +25,7 @@ public class CardOrderTest {
                 .shouldHave(text("Встреча успешно запланирована на " + formData.getDate()), Duration.ofSeconds(15))
                 .shouldBe(visible);
 
+        $(By.cssSelector("[data-test-id='date'] input")).sendKeys(Keys.chord(Keys.CONTROL, "a"), Keys.DELETE);
         $(By.cssSelector("[data-test-id='date'] input")).setValue(formData.getNewDate());
         $(By.className("button")).click();
         $(By.className("button_view_extra")).click();
